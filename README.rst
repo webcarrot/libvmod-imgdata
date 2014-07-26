@@ -23,7 +23,8 @@ DESCRIPTION
 ===========
 
 Varnish vmod that replace images urls with
- "data:image/{EXT};base64,{IMAGE_DATA}".
+
+"data:image/{EXT};base64,{IMAGE_DATA}".
 
 Imgdata is performed only once and the rewritten document is stored
 in cache.
@@ -91,4 +92,5 @@ COPYRIGHT
 =========
 
 Wojciech Wierchola 2014
+
 See LICENCE (GPLv3) for details.
