@@ -14,18 +14,7 @@ libvmod_imgdata_la_SOURCES = \
 vcc_if.c vcc_if.h: $(VARNISHSRC)/lib/libvmod_std/vmod.py $(top_srcdir)/src/vmod_imgdata.vcc
 	@PYTHON@ $(VARNISHSRC)/lib/libvmod_std/vmod.py $(top_srcdir)/src/vmod_imgdata.vcc
 
-VMOD_TESTS = tests/*.vtc
-.PHONY: $(VMOD_TESTS)
-
-# tests/*.vtc:
-#	valgrind --trace-children=yes $(VARNISHSRC)/bin/varnishtest/varnishtest -Dvarnishd=$(VARNISHSRC)/bin/varnishd/varnishd -Dvmod_topbuild=$(abs_top_builddir) $@
-#	$(VARNISHSRC)/bin/varnishtest/varnishtest -Dvarnishd=$(VARNISHSRC)/bin/varnishd/varnishd -Dvmod_topbuild=$(abs_top_builddir) -v $@
-#	$(VARNISHSRC)/bin/varnishtest/varnishtest -Dvarnishd=$(VARNISHSRC)/bin/varnishd/varnishd -Dvmod_topbuild=$(abs_top_builddir) $@
-
-# check: $(VMOD_TESTS)
-
 EXTRA_DIST = \
-	vmod_imgdata.vcc \
-	$(VMOD_TESTS)
+	vmod_imgdata.vcc
 
 CLEANFILES = $(builddir)/vcc_if.c $(builddir)/vcc_if.h
