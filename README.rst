@@ -15,6 +15,7 @@ SYNOPSIS
 ========
 
 Basically based on Aivars Kalvans libvmod-rewrite.
+
 Using CURL to download images and GNU coreutils base64
 implementation.
 
@@ -22,7 +23,7 @@ DESCRIPTION
 ===========
 
 Varnish vmod that replace images urls with
-"data:image/{EXT};base64,{IMAGE_DATA}".
+ "data:image/{EXT};base64,{IMAGE_DATA}".
 
 Imgdata is performed only once and the rewritten document is stored
 in cache.
