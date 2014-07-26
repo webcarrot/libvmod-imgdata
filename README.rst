@@ -14,13 +14,15 @@ Varnish Imgdata Module
 SYNOPSIS
 ========
 
-import imgdata;
+Basically based on Aivars Kalvans libvmod-rewrite.
+Using CURL to download images and GNU coreutils base64
+implementation.
 
 DESCRIPTION
 ===========
 
 Varnish vmod that replace images urls with
-"data:image/{EXT};base64,{IMAGE_DATA}" string
+"data:image/{EXT};base64,{IMAGE_DATA}".
 
 Imgdata is performed only once and the rewritten document is stored
 in cache.
@@ -36,10 +38,12 @@ Prototype
 
                 imgdata_re(STRING POSTFIX_REGEX)
 Return value
-	VOID
+  VOID
 Description
-	Replace all parts of document matching "https?://[^\"' ]+\\.(jpg|jpeg|png|gif){POSTFIX_REGEX}" with "data:image/{EXT};base64,{IMAGE_DATA}"
-
+  Replace all parts of document matching
+    "https?://[^\"' ]+\\.(jpg|jpeg|png|gif){POSTFIX_REGEX}"
+  with
+    "data:image/{EXT};base64,{IMAGE_DATA}"
 
 INSTALLATION
 ============
@@ -75,9 +79,15 @@ In your VCL you could then use this vmod along the following lines::
         }
     }
 
+TODO
+====
+
+* Database/cache for base64 form of images
+* Output compression
+* Output content buffer updates optimization
+
 COPYRIGHT
 =========
 
-See LICENCE for details.
-
-* Copyright (c) 2014 Wojciech Wierchola <admin@webcarrot.pl>
+Wojciech Wierchola 2014
+See LICENCE (GPLv3) for details.
