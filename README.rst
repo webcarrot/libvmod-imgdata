@@ -73,9 +73,9 @@ In your VCL you could then use this vmod along the following lines::
      
     sub vcl_deliver {  
         if (
-            req.http.Content-Type ~ "text/html" ||
-            req.http.Content-Type ~ "text/css"  ||
-            req.http.Content-Type ~ "application/json"
+            resp.http.Content-Type ~ "text/html" ||
+            resp.http.Content-Type ~ "text/css"  ||
+            resp.http.Content-Type ~ "application/json"
         ) {
             imgdata.imgdata_re("\?inline=true");
         }
